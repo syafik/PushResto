@@ -51,8 +51,12 @@
           <div class="navbar-inverse">
               
                <ul class="nav" id="myNav">
+                <% if user_signed_in? %>
                 <li><%= link_to "<i class=\"icon-home\"></i> Home".html_safe, products_path  %></li>
                 <li><%= link_to "<i class=\" icon-shopping-cart\"></i> Order".html_safe, new_order_path  %></li>
+                <% else %>
+                <li><%= link_to "SIGN IN", user_session_path %></li>
+                <% end %>
               </ul>
 
 

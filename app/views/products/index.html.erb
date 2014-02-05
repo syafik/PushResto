@@ -1,31 +1,28 @@
-<div class="carousel slide" id="myCarousel">
-  <ol class="carousel-indicators">
-    <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
-    <li data-slide-to="1" data-target="#myCarousel" class=""></li>
-    <li data-slide-to="2" data-target="#myCarousel" class=""></li>
-  </ol>
-  <div class="carousel-inner">
-    <% @products.each_with_index do |product, idx| %>
-    <div class="item <%= 'active' if idx.zero? %>">
-      <center>
-        <%= image_tag(product.photo.url, :class => "dd") %>
-      </center>
+<h1 style="text-align: center">Listing products</h1>
 
-      <div class="carousel-caption">
-        <h4>Name : <%= product.name %></h4>
-        <h4>Price : <span class="red"><%= number_to_currency(product.price, unit: "Rp. " ) %></span></h4>
-        <h4>Description : <%= product.description %></h4>
-      </div>
-    </div>
-   <% end %>
-  </div>
-  <a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-  <a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
-</div>
+<table class="table table-bordered">
+   <tr style="background-color: #222222; color:#fff">
+    <th>Name</th>
+    <th>Price</th>
+    <th>Photo</th>
+    <th>Description</th>
+    <th style="text-align: center" colspan="3">Action</th>
 
-<%= will_paginate @products, renderer: BootstrapPagination::Rails, :class => "pagination pagination-centered" %>
-<script>
-      $('.carousel').carousel({
-    interval: 2000
-    })
-</script>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= number_to_currency(product.price, unit: "Rp. " ) %></td>
+    <td><%= image_tag(product.photo_url(:thumb).to_s) %></td>
+    <td><%= product.description %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Show".html_safe, product, :class => "btn btn-primary" %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Edit".html_safe, edit_product_path(product), :class => "btn btn-success" %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Destroy".html_safe, product, :confirm => 'Are you sure?', :class => "btn btn-danger", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path, :class => "btn btn-geckoboard1" %>
