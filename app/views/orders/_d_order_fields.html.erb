@@ -1,0 +1,7 @@
+<tr class="nested-fields">
+<td>  <%= f.select :id_product, options_for_select(Product.all.collect{|p| [p.name, p.id]}), {}, :class => "select_product" %>
+</td>
+<td><%= f.input :quantity %>
+  </td>
+
+</tr>

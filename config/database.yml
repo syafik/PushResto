@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: produk1_development
+  pool: 5
+  host: localhost
+  username: usman
+  password: usman
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: produk1_test
+  pool: 5
+  host: localhost
+  username: usman
+  password: usman
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: produk1_production
+  pool: 5
+  host: localhost
+  username: usman
+  password: usman

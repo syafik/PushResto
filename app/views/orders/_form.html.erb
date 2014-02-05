@@ -1,0 +1,36 @@
+<%= simple_form_for @order,  url: orders_path do |f| %>
+<%= f.input :shipping %>
+<%= f.input :phone %>
+ <%#= f.simple_fields_for :d_order do |order| %>
+ 
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody id="d_orders">
+       
+
+        <%= f.simple_fields_for :d_orders do |event| %>
+          <%= render "detail_fields", :f => event %>
+          <% end %>
+
+    </tbody>
+  </table>
+<%= link_to_add_association f, :d_orders, :"data-association-insertion-node" => "tbody#d_orders", :"data-association-insertion-method" => "append", :partial => "d_order_fields", :class => "btn" do %>
+          <i class="icon-plus"></i>
+          Add new product & quantity
+        <% end %>
+
+    <%# end %>
+          <br>
+          <br>
+    <%= f.submit :save %>
+          </br>
+          </br>
+  <% end %>
+
+

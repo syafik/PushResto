@@ -1,0 +1,7 @@
+<%= simple_form_for @product, :html =>{ :class => 'form-vertical', :multipart => true} do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+ <%= f.input :photo, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
+<%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,19 @@
+<h1>Listing Order</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Shipping</th>
+    <th>Phone</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.shipping %></td>
+    <td><%= order.phone %></td>
+    <td><%= link_to 'Show', order_path(order) %></td>
+  </tr>
+<% end %>
+
+</table>
+
+
