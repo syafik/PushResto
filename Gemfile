@@ -14,7 +14,8 @@ gem 'rails-i18n'
 gem 'simple_form_fancy_uploads'
 gem 'will_paginate-bootstrap', '~> 0.2.5'
 gem "cocoon"
-
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
 
 
