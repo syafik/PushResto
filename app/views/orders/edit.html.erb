@@ -1,0 +1,10 @@
+<h1>Editing product</h1>
+
+<%= simple_form_for @order,  url:  order_path(@order), method: :put do |f| %>
+<%= f.input :shipping %>
+<%= f.input :phone %>
+<%= f.submit :value =>"update" %>
+<% end %>
+
+<%= link_to 'Show', @orders %> |
+<%= link_to 'Back', orders_path %>

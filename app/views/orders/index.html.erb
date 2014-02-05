@@ -10,7 +10,9 @@
   <tr>
     <td><%= order.shipping %></td>
     <td><%= order.phone %></td>
-    <td><%= link_to 'Show', order_path(order) %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Show".html_safe, order_path(order), :class => "btn btn-primary" %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Edit".html_safe, edit_order_path(order), :class => "btn btn-success" %></td>
+    <td><%= link_to "<i class=\"icon-fire\"></i> Destroy".html_safe, order_path(order), :confirm => 'Are you sure?', :class => "btn btn-danger", :method => :delete %></td>
   </tr>
 <% end %>
 

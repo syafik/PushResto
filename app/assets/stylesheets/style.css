@@ -28,6 +28,11 @@ width: 100%;
 }
 
 
+textarea {
+  width: 200px;
+  height: 100px;
+}
+
  .navbar-inverse .navbar-inner {
     background-color: #1B1B1B ;
     background-image: linear-gradient(to bottom, #222222, #111111);

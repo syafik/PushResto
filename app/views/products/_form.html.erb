@@ -2,6 +2,6 @@
   <%= f.input :name %>
   <%= f.input :price %>
  <%= f.input :photo, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
-<%= f.input :description %>
+<%= f.input :description, :id => "message_area", :cols => 3, :rows => 2 %>
   <%= f.button :submit %>
 <% end %>

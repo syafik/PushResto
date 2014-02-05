@@ -82,9 +82,10 @@ class ProductsController < ApplicationController
   end
 
   def get_all
-    @products = Product.all
+    @product = Product.all
     
-    render :json => @products
+    
+    render :json =>  @product
   end
 
   
