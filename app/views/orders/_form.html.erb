@@ -15,7 +15,7 @@
        
 
         <%= f.simple_fields_for :d_orders do |event| %>
-          <%= render "detail_fields", :f => event %>
+          <%= render "d_order_fields", :f => event %>
           <% end %>
 
     </tbody>
@@ -25,7 +25,7 @@
           Add new product & quantity
         <% end %>
 
-    <%# end %>
+    
           <br>
           <br>
     <%= f.submit :save %>

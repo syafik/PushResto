@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   end
 
    def create
-    @order = current_user.orders.new(params[:h_order]).order('date ASC ,created_at ASC')
+    @order = current_user.orders.new(params[:h_order])
 #    @order.id_user = current_user.id
 #    @order = HOrder.new
 #    @order.save
