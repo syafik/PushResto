@@ -14,9 +14,9 @@ PushFood::Application.routes.draw do
     end
   end
 
-  get "home/index"
+  get "products/index"
 
-   root :to => 'home#index'
+   root :to => 'products#index'
 
   
 end
